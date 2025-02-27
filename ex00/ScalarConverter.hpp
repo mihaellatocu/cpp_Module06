@@ -21,7 +21,7 @@ private: // mai am nev sa fie?
 public:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter& other);
-	ScalarConverter& operator=(const ScalarConverter& other);
+	virtual ScalarConverter& operator=(const ScalarConverter& other) = 0;
 	~ScalarConverter();
 
 	static void convert(const std::string& value);
@@ -32,5 +32,6 @@ bool	isInt(const std::string& str);
 bool	isFloat(const std::string& str);
 bool	isDouble(const std::string& str);
 void	printResult(char c, long i, float f, double d);
+void	printSpecial(const std::string& str);
 
 # endif

@@ -29,7 +29,7 @@ bool isDouble(const std::string& str)
 }
 
 void	printResult(char c, long i, float f, double d)
-{
+{	  
 	if (std::isnan(f) || f == std::numeric_limits<float>::infinity() ||
 			f == -std::numeric_limits<float>::infinity())
 				std::cout << "char: impossible" << std::endl;
@@ -47,7 +47,35 @@ void	printResult(char c, long i, float f, double d)
 		std::cout << "int: " << static_cast<int>(i) << std::endl;
 	
 	std::cout << "float: " << std::fixed << std::setprecision(1) << f << 'f' <<  std::endl;
-	std::cout << "double: " << d << std::endl;
+	if (d > std::numeric_limits<float>::max() || d < -std::numeric_limits<float>::max())
+		std::cout << "double: out of range" << std::endl;
+	else
+		std::cout << "double: " << d << std::endl;
+}
+
+void	printSpecial(const std::string& str)
+{
+	if (str == "nan" || str == "nanf")
+	{
+		std::cout << "char: impossible" << std::endl; 
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
+	else if (str == "+inf" || str == "+inff")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+	}
+	else if (str == "-inf" || str == "-inff")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	}
 }
 
 // std::cout << "DEBUG: char = " << static_cast<int>(c) << std::endl;
