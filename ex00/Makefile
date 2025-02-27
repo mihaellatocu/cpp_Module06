@@ -1,7 +1,7 @@
-NAME = converter
+NAME = convert
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp ScalarConverter.cpp 
+SRC = main.cpp ScalarConverter.cpp utils.cpp
 RM = rm -rf
 OBJ_F = ./obj
 obj = $(SRC:%.cpp=$(OBJ_F)/%.o)
