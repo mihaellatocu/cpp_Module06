@@ -1,6 +1,6 @@
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() // de verificat valori mari pt float si double
+ScalarConverter::ScalarConverter()
 { }
 
 ScalarConverter::ScalarConverter(const ScalarConverter& other)
@@ -102,6 +102,6 @@ void ScalarConverter::convert(const std::string& str)
 	}
 	else
 	{
-		std::cout <<B << str << " is unknown type." RST<< std::endl;
+		std::cout <<B << str << " is an unknown type." RST<< std::endl;
 	}
 }

@@ -47,10 +47,9 @@ void	printResult(char c, long i, float f, double d)
 		std::cout << "int: " << static_cast<int>(i) << std::endl;
 	
 	std::cout << "float: " << std::fixed << std::setprecision(1) << f << 'f' <<  std::endl;
-	if (d > std::numeric_limits<float>::max() || d < -std::numeric_limits<float>::max())
-		std::cout << "double: out of range" << std::endl;
-	else
-		std::cout << "double: " << d << std::endl;
+	std::cout << "double: " << d << std::endl;
+
+	
 }
 
 void	printSpecial(const std::string& str)
